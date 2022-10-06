@@ -22,7 +22,7 @@ Your task is to write an app that functions as a chess clock. This is untimed bu
 
 Chess clock
 
-	![chess clock](https://cdn.pixabay.com/photo/2017/03/18/16/19/clock-2154424_1280.png)
+	[![chess clock]](https://cdn.pixabay.com/photo/2017/03/18/16/19/clock-2154424_1280.png)
 
 A chess clock is used in a two player game of chess to keep track of the time spent by each player on their turn. The clock counts down and prevents the player from delaying the game and using up their allotted time.
 
