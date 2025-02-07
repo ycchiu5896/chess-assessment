@@ -41,6 +41,28 @@ export default function TimerPage({onStateChange}: {onStateChange: (winner: 'whi
         setInGame(true);
     }
 
+    const subtractTime = useCallback((time: PlayerTimeLeft, player: 'white' | 'black'): PlayerTimeLeft => {
+        return {
+            ...time,
+            [player]: time[player] - 1000,
+        };
+    }, []);
+
+        //decrement time every second
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPlayerTimeLeft((prev) => {
+                if (!inGame) {
+                    return prev;
+                }
+                const newTime = subtractTime(prev, playerTurn);
+                return newTime;
+            });
+        }, 1000);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [playerTurn, inGame, subtractTime]);
 
     return (
     <div className='parent-container'>
@@ -48,7 +70,7 @@ export default function TimerPage({onStateChange}: {onStateChange: (winner: 'whi
             {
                 Object.entries(PlayerTimeLeft).map(([player, time], index) => (
                     <div className={`${player}-container`} key={`${player}-${index}`}> 
-                        <DisplayTimer />
+                        <DisplayTimer player={player} time={time}/>
                         {playerTurn === player && <PlayerTurn startGame={startGame} inGame={inGame} switchPlayer={switchPlayer}/>}
                     </div>
                 ))
