@@ -6,7 +6,7 @@ import useDecrementTime from './useHooks/useDecrementTime';
 import '../App.css';
 
 
-export default function TimerPage({onStateChange}: {onStateChange: React.Dispatch<React.SetStateAction<'white' | 'black' | null>>;}) {
+export default function TimerPage({onStateChange}: {onStateChange: React.Dispatch<React.SetStateAction<'White' | 'Black' | null>>;}) {
 
     //custom hook to maanage player turns
     const {playerTurn, setPlayerTurn, inGame, setInGame, switchPlayer, startGame} = usePlayerTurn();

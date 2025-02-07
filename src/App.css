@@ -7,7 +7,7 @@ body {
 }
 
 button {
-  color: white;
+  color: White;
   display: block;
   width: 197px;
   height: 75px;
@@ -22,17 +22,17 @@ button {
   text-align: center;
 }
 
-.black-container {
-  background-color: black;
-  color: white;
+.Black-container {
+  background-color: Black;
+  color: White;
 }
 
-.white-container {
-  background-color: white;
-  color: black;
+.White-container {
+  background-color: White;
+  color: Black;
 }
 
-.black-container, .white-container {
+.Black-container, .White-container {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -60,14 +60,14 @@ button {
   margin-top: 116px;
 }
 
-.black-wins {
-  background-color: black;
-  color: white;
+.Black-Wins {
+  background-color: Black;
+  color: White;
 }
 
-.white-wins {
-  background-color: white;
-  color: black;
+.White-Wins {
+  background-color: White;
+  color: Black;
 }
 
 .winner-textbox {

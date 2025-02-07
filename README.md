@@ -28,7 +28,7 @@ A chess clock is used in a two player game of chess to keep track of the time sp
 
 The clock can be configured for any amount of time but for the purposes of this exercise, each player should be allotted 5 minutes.
 
-In chess the white side always goes first. Thus when the start button is pressed, the white clock should start counting down. When a player makes a move and wants to end their turn, they press a button which stops their clock, and starts the other player's clock.
+In chess the White side always goes first. Thus when the start button is pressed, the White clock should start counting down. When a player makes a move and wants to end their turn, they press a button which stops their clock, and starts the other player's clock.
 
 When either player’s clock reaches zero, the game is over and the other player is declared the winner.
 
@@ -36,11 +36,12 @@ The clock is then reset and ready for the next game.
 
 ### Your Task
 
-Create an app that will run in the browser that implements the basic chess clock functionality. The app should: 
+Create an app that will run in the browser that implements the basic chess clock functionality. The app should:
+
 - Start in a state where both players have 5 minutes on their clock and neither should be counting down.
 - There should be a button to start the game,
 - There should be two additional buttons, one for each player, that can be pressed when a player completes their turn.
-- When it becomes a player’s turn, their timer should begin to countdown. 
+- When it becomes a player’s turn, their timer should begin to countdown.
 - When one of the clocks reaches zero, the game is over. The timers should stop and a message should appear to indicate which player was the winner.
 
 In addition, we would ask that you style the app to match the designs in this specification. The figma file defines 3 different “screens”, and the various states of each. One for a new game, one for a live game, and one for the end of a game.
@@ -59,7 +60,3 @@ We will be primarily evaluating your code on the following criteria:
 - Correctness of solution
 
 Thanks! We hope this is fun. Please let us know if you have any questions.
-
-
-
-

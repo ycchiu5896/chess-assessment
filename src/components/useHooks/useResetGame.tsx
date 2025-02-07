@@ -7,32 +7,32 @@ interface TurnDuration {
 }
 
 interface PlayerTimeLeft {
-    white: number;
-    black: number;
+    White: number;
+    Black: number;
 }
 
 interface UseResetGameProps {
-    onStateChange: React.Dispatch<React.SetStateAction<'white' | 'black' | null>>;
-    playerTurn: 'white' | 'black';
-    setPlayerTurn: React.Dispatch<React.SetStateAction<'white' | 'black'>>;
+    onStateChange: React.Dispatch<React.SetStateAction<'White' | 'Black' | null>>;
+    playerTurn: 'White' | 'Black';
+    setPlayerTurn: React.Dispatch<React.SetStateAction<'White' | 'Black'>>;
     setInGame: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const TURN_DURATION: TurnDuration = {hours: 0, minutes: 0, seconds: 5};
+const TURN_DURATION: TurnDuration = {hours: 0, minutes: 5, seconds: 0};
 
 export default function useResetGame({onStateChange, playerTurn, setPlayerTurn, setInGame}: UseResetGameProps) {
 
     const SECONDS_GAME_END = 0;
 
     const [PlayerTimeLeft, setPlayerTimeLeft] = useState<PlayerTimeLeft>({
-        white: convertToSeconds(TURN_DURATION),
-        black: convertToSeconds(TURN_DURATION),
+        White: convertToSeconds(TURN_DURATION),
+        Black: convertToSeconds(TURN_DURATION),
     });
 
     const resetTimers = useCallback((): PlayerTimeLeft => {
         return {
-            white: convertToSeconds(TURN_DURATION),
-            black: convertToSeconds(TURN_DURATION),
+            White: convertToSeconds(TURN_DURATION),
+            Black: convertToSeconds(TURN_DURATION),
         };
     }, []);
 
@@ -43,12 +43,12 @@ export default function useResetGame({onStateChange, playerTurn, setPlayerTurn, 
     const resetGame = useCallback(() => {
         setPlayerTimeLeft(resetTimers());
         setInGame(false);
-        setPlayerTurn('white');
+        setPlayerTurn('White');
     }, [resetTimers,setInGame,setPlayerTurn]);
 
     useEffect(() => {
         if (PlayerTimeLeft[playerTurn] <= SECONDS_GAME_END) {
-            onStateChange(playerTurn === 'white' ? 'black' : 'white');
+            onStateChange(playerTurn === 'White' ? 'Black' : 'White');
             resetGame();
         }
     }, [PlayerTimeLeft, playerTurn, onStateChange, resetGame]);

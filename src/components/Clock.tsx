@@ -3,7 +3,7 @@ import TimerPage from './TimerPage';
 import WinnerPage from './WinnerPage';
 export default function Clock() {
 
-    const [winner, setWinner] = useState<'white' | 'black' | null> (null);
+    const [winner, setWinner] = useState<'White' | 'Black' | null> (null);
 
     //show different pages based on the state of the game
     return (

@@ -1,12 +1,12 @@
 import { useEffect, useCallback } from 'react';
 
 interface PlayerTimeLeft {
-    white: number;
-    black: number;
+    White: number;
+    Black: number;
 }
 
 interface UseDecrementTimeProps {
-    playerTurn: 'white' | 'black';
+    playerTurn: 'White' | 'Black';
     inGame: boolean;
     PlayerTimeLeft: PlayerTimeLeft;
     setPlayerTimeLeft: React.Dispatch<React.SetStateAction<PlayerTimeLeft>>;
@@ -14,7 +14,7 @@ interface UseDecrementTimeProps {
 
 export default function useDecrementTime({playerTurn, inGame, setPlayerTimeLeft}: UseDecrementTimeProps) {
 
-    const subtractTime = useCallback((time: PlayerTimeLeft, player: 'white' | 'black'): PlayerTimeLeft => {
+    const subtractTime = useCallback((time: PlayerTimeLeft, player: 'White' | 'Black'): PlayerTimeLeft => {
         return {
             ...time,
             [player]: time[player] - 1000,

@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 export default function usePlayerTurn() {
 
-    const [playerTurn, setPlayerTurn] = useState<'white' | 'black'>('white');
+    const [playerTurn, setPlayerTurn] = useState<'White' | 'Black'>('White');
     
     const [inGame, setInGame] = useState(false);
 
     function switchPlayer() {
-        setPlayerTurn((prev) => prev === 'white' ? 'black' : 'white');
+        setPlayerTurn((prev) => prev === 'White' ? 'Black' : 'White');
     }
 
     function startGame() {
