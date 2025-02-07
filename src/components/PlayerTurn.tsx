@@ -7,11 +7,11 @@ interface PlayerTurnProps {
 
 export default function PlayerTurn({startGame, inGame, switchPlayer}: PlayerTurnProps) {
     return(
-        <div>
+        <div className='player-turn-container'>
             {!inGame ? (
-                <button onClick={startGame}>Start Game</button>
+                <button type="button" className="btn-player-turn" onClick={startGame}>Start Game</button>
             ): (
-                <button onClick={switchPlayer}>End Turn</button>
+                <button type="button" className="btn-player-turn" onClick={switchPlayer}>End Turn</button>
             )
             } 
         </div>

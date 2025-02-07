@@ -8,8 +8,11 @@ import '../App.css';
 
 export default function TimerPage({onStateChange}: {onStateChange: React.Dispatch<React.SetStateAction<'white' | 'black' | null>>;}) {
 
+    //custom hook to maanage player turns
     const {playerTurn, setPlayerTurn, inGame, setInGame, switchPlayer, startGame} = usePlayerTurn();
+    //custom hook to manage the game state
     const {PlayerTimeLeft, setPlayerTimeLeft} = useResetGame({onStateChange, playerTurn, setPlayerTurn, setInGame});
+    //custom hook to manage the timer
     useDecrementTime({playerTurn, inGame, setPlayerTimeLeft, PlayerTimeLeft}); 
 
     return (
