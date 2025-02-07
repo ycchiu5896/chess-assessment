@@ -1,7 +1,13 @@
-export default function PlayerTurn() {
+
+export default function PlayerTurn({startGame, inGame, switchPlayer}: {startGame: () => void, inGame: boolean, switchPlayer: () => void}) {
     return(
         <div>
-            Timer
+            {!inGame ? (
+                <button onClick={startGame}>Start Game</button>
+            ): (
+                <button onClick={switchPlayer}>End Turn</button>
+            )
+            } 
         </div>
     )
 }
