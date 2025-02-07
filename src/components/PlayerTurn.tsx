@@ -1,5 +1,11 @@
 
-export default function PlayerTurn({startGame, inGame, switchPlayer}: {startGame: () => void, inGame: boolean, switchPlayer: () => void}) {
+interface PlayerTurnProps {
+    startGame: () => void;
+    inGame: boolean;
+    switchPlayer: () => void;
+}
+
+export default function PlayerTurn({startGame, inGame, switchPlayer}: PlayerTurnProps) {
     return(
         <div>
             {!inGame ? (
