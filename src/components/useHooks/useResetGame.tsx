@@ -44,7 +44,7 @@ export default function useResetGame({onStateChange, playerTurn, setPlayerTurn, 
         setPlayerTimeLeft(resetTimers());
         setInGame(false);
         setPlayerTurn('White');
-    }, [resetTimers,setInGame,setPlayerTurn]);
+    }, [resetTimers, setInGame, setPlayerTurn]);
 
     useEffect(() => {
         if (PlayerTimeLeft[playerTurn] <= SECONDS_GAME_END) {
